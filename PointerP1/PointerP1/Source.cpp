@@ -6,7 +6,6 @@ using namespace std;
 int main()
 {
 	//int num1, num2;
-	//int *pnum1 = &num1, *pnum2 = &num2;
 
 	//cout << "Input num1: ";
 	//cin >> num1;
@@ -24,8 +23,9 @@ int main()
 	значения двух переменных.
 	void swap(a, b);*/
 
-	//cout << "The numbers before swap: " << *pnum1 << ", " << *pnum2;
+	//cout << "The numbers before swap: " << num1 << ", " << num2;
 	//swap(&num1, &num2);
+	//cout << "\nThe numbers after swap: " << num1 << ", " << num2;
 	//cout << endl;
 
 	/*3. Пользуясь указателем на массив целых чисел, посчитать сумму эле-
@@ -41,14 +41,14 @@ int main()
 	//int arr[size] = {};
 
 	//int sum = 0;
-	//long mult = 1;
-	//int *psum = &sum;
-	//long *pmult = &mult;
+	//long long mult = 1;
 
 	//cout << "Array: ";
 	//initialShow(arr, size);
 
 	//func(arr, size, &sum, &mult);
+	//cout << "The sum of array: " << sum;
+	//cout << "\nThe mult of array: " << mult;
 	//cout << endl;
 
 	/*5. Написать функцию, которая получает указатель на массив и его
@@ -58,8 +58,14 @@ int main()
 	const int size = 20;
 	int arr[size] = {};
 
+	int neg = 0, zero = 0, pos = 0;
+
 	cout << "Array: ";
 	initialNeg(arr, size);
 
-	sort(arr, size);
+	sort(arr, size, &neg, &zero, &pos);
+
+	cout << "\nCount of negative number: " << neg;
+	cout << "\nCount of zero number: " << zero;
+	cout << "\nCount of positive number: " << pos << endl;
 }

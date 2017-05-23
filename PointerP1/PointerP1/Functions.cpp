@@ -17,7 +17,6 @@ void swap(int *pnum1, int *pnum2)
 	temp = *pnum1;
 	*pnum1 = *pnum2;
 	*pnum2 = temp;
-	cout << "\nThe numbers after swap: " << *pnum1 << ", " << *pnum2;
 }
 
 void initialShow(int *arr, int length)
@@ -32,16 +31,13 @@ void initialShow(int *arr, int length)
 	cout << endl;
 }
 
-void func(int *arr, int length, int *sum, long *mult)
+void func(int *arr, int length, int *sum, long long *mult)
 {
 	for (int i = 0; i < length; i++)
 	{
 		*sum += *(arr + i);
 		*mult *= *(arr + i);
 	}
-
-	cout << "The sum of array: " << *sum << endl;
-	cout << "The mult of array: " << *mult;
 
 }
 
@@ -57,21 +53,19 @@ void initialNeg(int *arr, int length)
 	cout << endl;
 }
 
-void sort(int *arr, int length)
+void sort(int *arr, int length, int *neg, int *zero, int *pos)
 {
-	int neg = 0, zero = 0, pos = 0;
+//	int fneg = 0, fpos = 0, fzero = 0;
 
 	for (int i = 0; i < length; i++)
 	{
 		if (*(arr + i) < 0)
-			neg++;
+			(*neg)++;
 		else if (*(arr + i) == 0)
-			zero++;
+			(*zero)++;
 		else if (*(arr + i) > 0)
-			pos++;
+			(*pos)++;
 	}
 
-	cout << "\nCount of negative number: " << neg;
-	cout << "\nCount of zero number: " << zero;
-	cout << "\nCount of positive number: " << pos << endl;
+//	*neg = fneg; *pos = fpos; *zero = fzero;
 }
